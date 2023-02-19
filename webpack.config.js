@@ -8,6 +8,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
+    watchFiles: ["src/**/*.html"]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -23,8 +24,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
