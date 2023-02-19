@@ -1,4 +1,9 @@
 // entry point script
 
-document.body.textContent = "hello world";
-console.log(process.env.OPEN_WEATHER_KEY);
+import getLocation from "./get_location";
+import getWeather from "./get_weather";
+
+getLocation("London")
+  .then(getWeather)
+  .then(console.log);
+
