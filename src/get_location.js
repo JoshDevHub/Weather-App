@@ -6,7 +6,7 @@ const APPID = `APPID=${process.env.OPEN_WEATHER_KEY}`;
 
 const extractJsonData = selectProps("name", "country", "lat", "lon");
 
-export default async function getLocation(cityName) {
+export async function fetchData(cityName) {
   const requestUrl = `${BASE_URL}${cityName}&${LIMIT_PARAM}&${APPID}`;
   try {
     const response = await fetch(requestUrl, { mode: "cors" })

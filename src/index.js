@@ -1,9 +1,9 @@
 // entry point script
 
-import getLocation from "./get_location";
-import getWeather from "./get_weather";
+import * as Location from "./get_location";
+import * as Weather from "./get_weather";
 
-getLocation("London")
-  .then(getWeather)
+Location
+  .fetchData("London")
+  .then(Weather.fetchData)
   .then(console.log);
-
