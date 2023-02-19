@@ -1,6 +1,6 @@
 // entry point script
 
-import "./style.scss";
+import "./stylesheets/application.scss";
 
 import * as Location from "./get_location";
 import * as Weather from "./get_weather";
