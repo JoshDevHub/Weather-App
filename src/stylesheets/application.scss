@@ -1,5 +1,14 @@
+// Mixins
+@import "mixins/media";
 
 // Configuration
 @import "config/variables";
 @import "config/reset";
 
+// Components
+@import "components/form";
+@import "components/visually_hidden";
+
+// Layouts
+@import "layouts/container";
+@import "layouts/header";

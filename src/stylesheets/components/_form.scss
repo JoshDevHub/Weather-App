@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0 auto;
+
+  @include media(tabletAndUp) {
+    max-width: 40rem;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--border-radius);
+    outline: none;
+  }
+}
