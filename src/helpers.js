@@ -6,3 +6,11 @@ export const selectProps = (...props) => {
     }, {});
   }
 }
+
+export const transformValues = (obj, mappingFn) => {
+  const newObject = {};
+  for (const [prop, value] of Object.entries(obj)) {
+    newObject[prop] = mappingFn(value);
+  }
+  return newObject;
+}
