@@ -1,5 +1,14 @@
 import { buildElement } from "./build_element";
 import { selectProps, transformValues } from "./helpers";
+import * as icons from "./icons/manifest";
+
+const weatherToPropMap = {
+  "Clouds": "cloudy",
+  "Clear": "sunny",
+  "Rain": "rainy",
+  "Drizzle": "rainy",
+  "Snow": "snowy"
+}
 
 const selectTemps = selectProps("temp", "temp_max", "temp_min");
 const roundTemp = (temp) => Math.round(temp);
@@ -11,6 +20,16 @@ export const renderWeather = (data) => {
   const fragment = document.createDocumentFragment();
   fragment.appendChild(
     buildElement({ tag: "h3", text: `${data.name}, ${data.country}` })
+  )
+
+  fragment.appendChild(
+    buildElement({
+      tag: "div",
+      children: {
+        tag: "svg",
+        data: icons[weatherProp]
+      }
+    })
   )
 
   const displayTemperatures = transformValues(selectTemps(data), roundTemp);
