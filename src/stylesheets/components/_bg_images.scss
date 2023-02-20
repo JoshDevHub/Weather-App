@@ -1,0 +1,9 @@
+body {
+  &.cloudy {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/cloudy_background.jpg")
+  }
+}

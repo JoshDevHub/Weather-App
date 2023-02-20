@@ -16,6 +16,9 @@ const roundTemp = (temp) => Math.round(temp);
 const contentContainer = document.getElementById("content");
 export const renderWeather = (data) => {
   contentContainer.replaceChildren();
+  const weatherProp = weatherToPropMap[data.weatherType];
+  document.body.className = `${weatherProp}`;
+
 
   const fragment = document.createDocumentFragment();
   fragment.appendChild(

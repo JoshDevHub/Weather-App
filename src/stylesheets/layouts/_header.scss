@@ -4,7 +4,7 @@
   gap: var(--space-s);
   justify-content: center;
   margin-top: var(--space-m);
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-m);
 
   @include media(tabletAndUp) {
     margin-bottom: var(--space-xl);
