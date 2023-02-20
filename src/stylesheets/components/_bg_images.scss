@@ -23,6 +23,14 @@ body {
                 ),
                 url("./../bg_images/snowy_background.jpg");
     background-position: 60% 20%;
+  }
 
+  &.rainy {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/rainy_background.jpg");
+    background-position: 50% 80%;
   }
 }
