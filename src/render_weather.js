@@ -14,8 +14,8 @@ const selectTemps = selectProps("temp", "temp_max", "temp_min");
 const roundTemp = (temp) => Math.round(temp);
 
 const unitUnicodeMap = {
-  "imperial": String.fromCodePoint(8451),
-  "metric": String.fromCodePoint(8457)
+  "metric": String.fromCodePoint(8451),
+  "imperial": String.fromCodePoint(8457)
 }
 const temperatureWithUnit = (temp, units) => temp + unitUnicodeMap[units];
 
