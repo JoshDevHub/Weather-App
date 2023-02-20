@@ -13,10 +13,13 @@ export async function fetchData(location, units = "imperial") {
   try {
     const response = await fetch(requestUrl, { mode: "cors" })
     const resJSON = await response.json();
+    console.log(resJSON);
     return {
       ...getLocationData(location),
       ...getTemperatureData(resJSON.main),
-      weatherType: resJSON.weather[0].main
+      weatherType: resJSON.weather[0].main,
+      description: resJSON.weather[0].description,
+      units
     }
   } catch(error) {
     console.log(error);

@@ -9,14 +9,17 @@
   padding: var(--space-m);
   opacity: 0.9;
 
-
-  & h3 {
+  &__icon {
     margin-bottom: var(--space-m);
+
+    &__description:before, &__description:after {
+      content: " - "
+    }
   }
 
   & svg {
-    height: 32px;
-    width: 32px;
+    height: 48px;
+    width: 48px;
   }
 
   @include media(tabletAndUp) {
