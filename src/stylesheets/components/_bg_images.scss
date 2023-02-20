@@ -6,4 +6,13 @@ body {
                 ),
                 url("./../bg_images/cloudy_background.jpg")
   }
+
+  &.sunny {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/sunny_background.jpg");
+    background-position: 50% 10%;
+  }
 }
