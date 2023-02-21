@@ -1,6 +1,6 @@
-import { buildElement } from "./build_element";
-import { selectProps, transformValues } from "./helpers";
-import * as icons from "./icons/manifest";
+import { createHeading } from "./helpers/to_html";
+import { renderExtraInfo } from "./components/render_extra_info";
+import { renderIconSection } from "./components/render_icon_section"
 
 const weatherToPropMap = {
   "Clouds": "cloudy",
@@ -10,60 +10,18 @@ const weatherToPropMap = {
   "Snow": "snowy"
 }
 
-const selectTemps = selectProps("temp", "temp_max", "temp_min");
-const roundTemp = (temp) => Math.round(temp);
-
-const unitUnicodeMap = {
-  "metric": String.fromCodePoint(8451),
-  "imperial": String.fromCodePoint(8457)
-}
-const temperatureWithUnit = (temp, units) => temp + unitUnicodeMap[units];
-
 const contentContainer = document.getElementById("content");
+
 export const renderWeather = (data) => {
-  contentContainer.replaceChildren();
   const weatherProp = weatherToPropMap[data.weatherType];
-  document.body.className = `${weatherProp}`;
 
+  contentContainer.replaceChildren();
 
-  const fragment = document.createDocumentFragment();
-  fragment.appendChild(
-    buildElement({ tag: "h1", text: `${data.name}, ${data.country}` })
+  document.body.className = weatherProp;
+  contentContainer.appendChild(
+    createHeading(1, `${data.name}, ${data.country}`)
   )
 
-  fragment.appendChild(
-    buildElement({
-      tag: "div",
-      attributes: { class: "weather__icon" },
-      children: [
-        {
-          tag: "svg",
-          data: icons[weatherProp]
-        },
-        {
-          tag: "p",
-          attributes: { class: "weather__icon__description" },
-          text: data.description
-        }
-      ]
-    })
-  )
-
-  const displayTemperatures = transformValues(selectTemps(data), roundTemp);
-
-  fragment.appendChild(
-    buildElement(
-      {
-        tag: "div",
-        children: [
-          {
-            tag: "p",
-            text: temperatureWithUnit(displayTemperatures.temp, data.units)
-          },
-        ]
-      }
-    )
-  )
-
-  contentContainer.appendChild(fragment);
+  renderIconSection(weatherProp, data.description, contentContainer);
+  renderExtraInfo(data, contentContainer);
 }
