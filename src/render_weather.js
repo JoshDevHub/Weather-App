@@ -2,13 +2,14 @@ import { createHeading } from "./helpers/to_html";
 import { renderExtraInfo } from "./components/render_extra_info";
 import { renderIconSection } from "./components/render_icon_section"
 
-const weatherToPropMap = {
-  "Clouds": "cloudy",
-  "Clear": "sunny",
-  "Rain": "rainy",
-  "Drizzle": "rainy",
-  "Snow": "snowy"
-}
+const weatherToPropMap = new Map([
+  ["Clouds", "cloudy"],
+  ["Clear", "sunny"],
+  ["Rain", "rainy"],
+  ["Drizzle", "rainy"],
+  ["Snow", "snowy"],
+  ["Stormy", "stormy"]
+])
 
 const contentContainer = document.getElementById("content");
 

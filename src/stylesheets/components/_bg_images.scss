@@ -33,4 +33,13 @@ body {
                 url("./../bg_images/rainy_background.jpg");
     background-position: 50% 80%;
   }
+
+  &.stormy {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/stormy_background.jpg");
+    background-position: 90% 20%;
+  }
 }
