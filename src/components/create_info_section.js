@@ -7,7 +7,7 @@ const unitUnicodeMap = {
 const combineTempWithUnit = (temp, units) => `${temp}${unitUnicodeMap[units]}`;
 const roundTemp = (temp) => Math.round(temp);
 
-export const renderExtraInfo = ({ temp, units }, parent) => {
+export const createInfoSection = ({ temp, units }) => {
   const temperatureDisplay = combineTempWithUnit(roundTemp(temp), units);
 
   const infoDisplay = toDomNode(
@@ -17,5 +17,5 @@ export const renderExtraInfo = ({ temp, units }, parent) => {
   )
   infoDisplay.querySelector("p").textContent = temperatureDisplay;
 
-  parent.appendChild(infoDisplay);
+  return infoDisplay;
 }

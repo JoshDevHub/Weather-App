@@ -1,6 +1,6 @@
 import { createHeading } from "./helpers/to_html";
-import { renderExtraInfo } from "./components/render_extra_info";
-import { renderIconSection } from "./components/render_icon_section"
+import { createInfoSection } from "./components/create_info_section";
+import { createIconSection } from "./components/create_icon_section";
 
 const weatherToPropMap = new Map([
   ["Clouds", "cloudy"],
@@ -14,15 +14,15 @@ const weatherToPropMap = new Map([
 const contentContainer = document.getElementById("content");
 
 export const renderWeather = (data) => {
-  const weatherProp = weatherToPropMap[data.weatherType];
+  const weatherProp = weatherToPropMap.get(data.weatherType);
 
   contentContainer.replaceChildren();
 
   document.body.className = weatherProp;
-  contentContainer.appendChild(
-    createHeading(1, `${data.name}, ${data.country}`)
-  )
-
-  renderIconSection(weatherProp, data.description, contentContainer);
-  renderExtraInfo(data, contentContainer);
+  const subTree = [
+    createHeading(1, `${data.name}, ${data.country}`),
+    createIconSection(weatherProp, data.description),
+    createInfoSection(data)
+  ]
+  subTree.forEach((component) => contentContainer.appendChild(component));
 }
