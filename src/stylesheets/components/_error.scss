@@ -1,0 +1,11 @@
+.error {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-l);
+  gap: var(--space-m);
+
+  & h2 {
+    color: #c15c66;
+  }
+}
