@@ -4,7 +4,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 const APPID_PARAM = `APPID=${process.env.OPEN_WEATHER_KEY}`;
 
 const getLocationData = selectProps("name", "country");
-const getTemperatureData = selectProps("temp", "temp_max", "temp_min");
+const getTemperatureData = selectProps("temp", "humidity", "feels_like");
 
 export async function fetchData(location, units = "imperial") {
   const { lat, lon } = location;

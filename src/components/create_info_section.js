@@ -7,15 +7,26 @@ const unitUnicodeMap = {
 const combineTempWithUnit = (temp, units) => `${temp}${unitUnicodeMap[units]}`;
 const roundTemp = (temp) => Math.round(temp);
 
-export const createInfoSection = ({ temp, units }) => {
-  const temperatureDisplay = combineTempWithUnit(roundTemp(temp), units);
+export const createInfoSection = (info) => {
+  const infoData = [
+    combineTempWithUnit(roundTemp(info.temp), info.units),
+    combineTempWithUnit(roundTemp(info.feels_like), info.units),
+    `${info.humidity}%`,
+  ]
 
   const infoDisplay = toDomNode(
-    `<div>
-      <p></p>
-    </div>`
+    `<dl class="weather__info-section">
+      <dt>Temperature</dt>
+      <dd></dd>
+      <dt>Feels Like</dt>
+      <dd></dd>
+      <dt>Humidity</dt>
+      <dd></dd>
+    </dl>`
   )
-  infoDisplay.querySelector("p").textContent = temperatureDisplay;
+  infoDisplay.querySelectorAll("dd").forEach((desc, index) => {
+    desc.textContent = infoData[index];
+  })
 
   return infoDisplay;
 }

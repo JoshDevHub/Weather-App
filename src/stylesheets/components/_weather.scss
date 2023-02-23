@@ -9,8 +9,17 @@
   padding: var(--space-m);
   opacity: 0.95;
 
+  & h1 {
+    margin-bottom: var(--space-s);
+    text-align: center;
+  }
+
   &__icon {
     margin-bottom: var(--space-m);
+
+    &__description {
+      font-size: var(--text-xl);
+    }
 
     &__description:before, &__description:after {
       content: " - "
@@ -20,6 +29,22 @@
   & svg {
     height: 48px;
     width: 48px;
+  }
+
+  &__info-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    & dt {
+      font-weight: bold;
+      font-size: var(--text-xl);
+    }
+
+    & dd {
+      font-size: var(--text-l);
+      margin-bottom: var(--space-m);
+    }
   }
 
   @include media(tabletAndUp) {
