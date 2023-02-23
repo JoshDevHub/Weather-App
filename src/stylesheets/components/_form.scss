@@ -11,7 +11,32 @@
     width: 100%;
     max-width: 100%;
     padding: var(--space-2xs) var(--space-xs);
-    border-radius: var(--border-radius);
+    border: 2px solid hsl(210, 27%, 20%);
+    border-bottom-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
     outline: none;
+  }
+
+  & button {
+    background-color: hsl(209, 28%, 40%);
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border: 2px solid hsl(210, 27%, 20%);
+    border-left-style: none;
+    color: white;
+    font-weight: bold;
+    padding: var(--space-xs);
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &:hover, &:focus {
+      cursor: pointer;
+      background-color: hsl(209, 28%, 50%);
+      border: 2px solid hsl(210, 27%, 20%);
+      border-left-style: none;
+    }
   }
 }
