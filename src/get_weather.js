@@ -19,6 +19,7 @@ export async function fetchData(location, units = "imperial") {
       ...getTemperatureData(resJSON.main),
       weatherType: resJSON.weather[0].main,
       description: resJSON.weather[0].description,
+      timezoneOffset: resJSON.timezone,
       units
     }
   } catch(error) {

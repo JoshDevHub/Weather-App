@@ -1,4 +1,4 @@
-import { toDomNode } from "../helpers/to_html";
+import { toDomNode } from "../helpers/dom_fns";
 import * as icons from "../icons/manifest";
 
 export const createIconSection = (iconKey, description, parent) => {

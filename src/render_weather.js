@@ -1,6 +1,7 @@
-import { createHeading } from "./helpers/to_html";
+import { contentTag } from "./helpers/dom_fns";
 import { createInfoSection } from "./components/create_info_section";
 import { createIconSection } from "./components/create_icon_section";
+import { createTimeSection } from "./components/create_time_section";
 
 import { selectProps } from "./helpers";
 
@@ -23,9 +24,11 @@ export const renderWeather = (data) => {
 
   document.body.className = weatherProp;
   const subTree = [
-    createHeading(1, `${data.name}, ${data.country}`),
+    contentTag("h1", `${data.name}, ${data.country}`),
+    createTimeSection(data.timezoneOffset),
     createIconSection(weatherProp, data.description),
     createInfoSection( extractWeatherInfo(data) )
   ]
+
   subTree.forEach((component) => contentContainer.appendChild(component));
 }
