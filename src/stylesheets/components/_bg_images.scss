@@ -60,4 +60,13 @@ body {
                 url("./../bg_images/cloudy_night_background.jpg");
     background-position: 30% 5%;
   }
+
+  &.misty {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/misty_background.jpg");
+    background-position: 70% 30%;
+  }
 }

@@ -13,7 +13,8 @@ const weatherToPropMap = new Map([
   ["Rain", "rainy"],
   ["Drizzle", "rainy"],
   ["Snow", "snowy"],
-  ["Stormy", "stormy"]
+  ["Stormy", "stormy"],
+  ["Mist", "misty"]
 ])
 
 const contentContainer = document.getElementById("content");
