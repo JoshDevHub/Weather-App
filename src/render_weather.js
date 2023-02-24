@@ -7,7 +7,7 @@ import { selectProps } from "./helpers";
 
 const weatherToPropMap = new Map([
   ["Clouds day", "cloudy"],
-  ["Clouds night", "cloudy"],
+  ["Clouds night", "cloudyNight"],
   ["Clear day", "sunny"],
   ["Clear night", "night"],
   ["Rain", "rainy"],

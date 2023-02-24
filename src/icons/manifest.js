@@ -4,6 +4,7 @@ import snowy from "./snowy.svg";
 import rainy from "./rainy.svg";
 import stormy from "./stormy.svg";
 import night from "./night.svg";
+import cloudyNight from "./cloudy-night.svg";
 
 export {
   sunny,
@@ -11,5 +12,6 @@ export {
   snowy,
   rainy,
   stormy,
-  night
+  night,
+  cloudyNight
 }

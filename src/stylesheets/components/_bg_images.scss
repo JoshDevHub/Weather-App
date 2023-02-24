@@ -51,4 +51,13 @@ body {
                 url("./../bg_images/night.jpg");
     background-position: 30% 5%;
   }
+
+  &.cloudyNight {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.10),
+                  rgba(0, 0, 0, 0.10)
+                ),
+                url("./../bg_images/cloudy_night_background.jpg");
+    background-position: 30% 5%;
+  }
 }
