@@ -1,7 +1,7 @@
 import { toDomNode } from "../helpers/dom_fns";
 import * as icons from "../icons/manifest";
 
-export const createIconSection = (iconKey, description, parent) => {
+export const createIconSection = (iconKey, description) => {
   const iconSection = toDomNode(
     `<div class="weather__icon">
       ${icons[iconKey]}
@@ -11,6 +11,5 @@ export const createIconSection = (iconKey, description, parent) => {
   )
   iconSection.querySelector("p").textContent = description;
 
-  /* parent.appendChild(iconSection); */
   return iconSection;
 }

@@ -5,6 +5,7 @@ const APPID_PARAM = `APPID=${process.env.OPEN_WEATHER_KEY}`;
 
 const getLocationData = selectProps("name", "country");
 const getTemperatureData = selectProps("temp", "humidity", "feels_like");
+const getSunriseData = selectProps("sunrise", "sunset");
 
 export async function fetchData(location, units = "imperial") {
   const { lat, lon } = location;
@@ -17,6 +18,7 @@ export async function fetchData(location, units = "imperial") {
     return {
       ...getLocationData(location),
       ...getTemperatureData(resJSON.main),
+      ...getSunriseData(resJSON.sys),
       weatherType: resJSON.weather[0].main,
       description: resJSON.weather[0].description,
       timezoneOffset: resJSON.timezone,

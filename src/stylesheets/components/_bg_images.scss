@@ -42,4 +42,13 @@ body {
                 url("./../bg_images/stormy_background.jpg");
     background-position: 90% 20%;
   }
+
+  &.night {
+    background: linear-gradient(
+                  rgba(0, 0, 0, 0.30),
+                  rgba(0, 0, 0, 0.30)
+                ),
+                url("./../bg_images/night.jpg");
+    background-position: 30% 5%;
+  }
 }
