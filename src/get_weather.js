@@ -1,4 +1,4 @@
-import { selectProps } from "./helpers";
+import { selectProps } from "./helpers/utility_functions";
 
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 const APPID_PARAM = `APPID=${process.env.OPEN_WEATHER_KEY}`;

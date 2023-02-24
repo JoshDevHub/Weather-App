@@ -1,4 +1,4 @@
-import { selectProps } from "./helpers";
+import { selectProps } from "./helpers/utility_functions";
 
 const BASE_URL = "http://api.openweathermap.org/geo/1.0/direct?q="
 const LIMIT_PARAM = "limit=1"; // only lookup 1 city per request
