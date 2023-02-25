@@ -10,17 +10,22 @@ import { renderError } from "./render_error";
 
 const form = document.querySelector("form");
 const searchInput = document.getElementById("search");
+const unitToggle = document.getElementById("units");
+const getUnitSystem = () => unitToggle.checked ? "metric" : "imperial";
+
 const handleSearch = (event) => {
   event.preventDefault();
 
   const searchTerm = searchInput.value;
+  console.log(getUnitSystem());
   Location
     .fetchData(searchTerm)
-    .then(Weather.fetchData)
+    .then((location) => Weather.fetchData(location, getUnitSystem()))
+    /* .then(Weather.fetchData) */
     .then(renderWeather)
     .catch(renderError)
 
-  form.reset();
+  searchInput.textContent = "";
 }
 
 form.addEventListener("submit", handleSearch);

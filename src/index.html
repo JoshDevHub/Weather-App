@@ -11,9 +11,13 @@
   </header>
   <main class="container">
     <form action="" class="form">
-      <label for="search" class="visually-hidden">Search City</label>
-      <input type="text" id="search" name="search" placeholder="Search City" class="form__input">
-      <button type="submit" class="btn">Search</button>
+      <div class="form__search__group">
+        <label for="search" class="visually-hidden">Search City</label>
+        <input type="text" id="search" name="search" placeholder="Search City" class="form__input">
+        <button type="submit" class="btn">Search</button>
+      </div>
+      <label for="units" class="visually-hidden">Toggle Units</label>
+      <input type="checkbox" id="units" name="units">
     </form>
     <section id="content" class="weather"></section>
   </main>

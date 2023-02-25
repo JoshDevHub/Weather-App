@@ -1,12 +1,22 @@
 .form {
   display: flex;
+  gap: var(--space-xs);
+  flex-direction: column;
   margin: 0 auto;
 
   @include media(tabletAndUp) {
     max-width: 40rem;
   }
 
-  &__input {
+  &__search__group {
+    display: flex;
+  }
+
+  & input[type='checkbox'] {
+    margin-right: auto;
+  }
+
+  & input[type="text"] {
     display: block;
     width: 100%;
     max-width: 100%;

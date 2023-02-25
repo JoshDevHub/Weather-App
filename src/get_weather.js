@@ -7,7 +7,7 @@ const getLocationData = selectProps("name", "country");
 const getTemperatureData = selectProps("temp", "humidity", "feels_like");
 const getSunriseData = selectProps("sunrise", "sunset");
 
-export async function fetchData(location, units = "imperial") {
+export async function fetchData(location, units) {
   const { lat, lon } = location;
   const locationParams = `lat=${lat}&lon=${lon}`;
   const requestUrl = `${BASE_URL}${locationParams}&${APPID_PARAM}&units=${units}`;
@@ -15,6 +15,7 @@ export async function fetchData(location, units = "imperial") {
     const response = await fetch(requestUrl, { mode: "cors" })
     const resJSON = await response.json();
     console.log(resJSON);
+    console.log(units);
     return {
       ...getLocationData(location),
       ...getTemperatureData(resJSON.main),
