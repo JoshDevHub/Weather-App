@@ -14,6 +14,10 @@
 
   & input[type='checkbox'] + label {
     font-size: var(--text-xl);
+    background-color: var(--dark-bg);
+    padding: 0 var(--space-xs);
+    border-radius: var(--border-radius);
+    width: fit-content;
 
     &::before {
       content: "F";
@@ -25,7 +29,7 @@
 
     &::after {
       content: "C";
-      color: hsl(209, 28%, 30%);
+      color: hsl(209, 28%, 40%);
       font-size: var(--text-l);
       font-weight: bold;
       transition: 200ms ease-in-out;
@@ -40,7 +44,7 @@
     margin-right: auto;
 
     &::before {
-      color: hsl(209, 28%, 30%);
+      color: hsl(209, 28%, 40%);
     }
 
     &::after {
