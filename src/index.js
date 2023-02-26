@@ -17,11 +17,9 @@ const handleSearch = (event) => {
   event.preventDefault();
 
   const searchTerm = searchInput.value;
-  console.log(getUnitSystem());
   Location
     .fetchData(searchTerm)
     .then((location) => Weather.fetchData(location, getUnitSystem()))
-    /* .then(Weather.fetchData) */
     .then(renderWeather)
     .catch(renderError)
 

@@ -15,7 +15,6 @@ export async function fetchData(location, units) {
     const response = await fetch(requestUrl, { mode: "cors" })
     const resJSON = await response.json();
     console.log(resJSON);
-    console.log(units);
     return {
       ...getLocationData(location),
       ...getTemperatureData(resJSON.main),

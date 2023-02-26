@@ -12,8 +12,40 @@
     display: flex;
   }
 
-  & input[type='checkbox'] {
+  & input[type='checkbox'] + label {
+    font-size: var(--text-xl);
+
+    &::before {
+      content: "F";
+      color: white;
+      font-size: var(--text-l);
+      font-weight: bold;
+      transition: 200ms ease-in-out;
+    }
+
+    &::after {
+      content: "C";
+      color: hsl(209, 28%, 30%);
+      font-size: var(--text-l);
+      font-weight: bold;
+      transition: 200ms ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & input[type='checkbox']:checked + label {
     margin-right: auto;
+
+    &::before {
+      color: hsl(209, 28%, 30%);
+    }
+
+    &::after {
+      color: white;
+    }
   }
 
   & input[type="text"] {
