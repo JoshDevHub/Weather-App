@@ -53,6 +53,7 @@
   }
 
   & input[type="text"] {
+    background-color: hsl(209, 28%, 90%);
     display: block;
     width: 100%;
     max-width: 100%;
@@ -61,6 +62,10 @@
     border-bottom-left-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
     outline: none;
+
+    &:focus {
+      background-color: hsl(209, 28%, 100%);
+    }
   }
 
   & button {
