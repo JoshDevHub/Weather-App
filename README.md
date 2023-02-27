@@ -1,6 +1,6 @@
 # Weather App
 
-An app to view weather forecasts. Makes use of the [Open Weather API](https://openweathermap.org/)
+An app to view weather current weather information for cities around the world. This app makes use of the [Open Weather API](https://openweathermap.org/). I intended this to be a small project to practice fetching API data using client-side JavaScript.
 
 ## Background Image Attributions
 
