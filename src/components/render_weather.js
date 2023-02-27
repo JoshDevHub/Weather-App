@@ -1,9 +1,9 @@
-import { contentTag } from "./helpers/dom_fns";
-import { createInfoSection } from "./components/create_info_section";
-import { createIconSection } from "./components/create_icon_section";
-import { createTimeSection } from "./components/create_time_section";
+import { contentTag } from "../helpers/dom_fns";
+import { createInfoSection } from "./templates/create_info_section";
+import { createIconSection } from "./templates/create_icon_section";
+import { createTimeSection } from "./templates/create_time_section";
 
-import { selectProps } from "./helpers/utility_functions";
+import { selectProps } from "../helpers/utility_functions";
 
 const weatherToPropMap = new Map([
   ["Clouds day", "cloudy"],

@@ -1,4 +1,4 @@
-import { toDomNode } from "../helpers/dom_fns";
+import { toDomNode } from "../../helpers/dom_fns";
 
 const displayTime = (timezoneOffset) => {
   const currentTime = new Date();

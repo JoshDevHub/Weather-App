@@ -1,4 +1,4 @@
-import { selectProps } from "./helpers/utility_functions";
+import { selectProps } from "../helpers/utility_functions";
 
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 const APPID_PARAM = `APPID=${process.env.OPEN_WEATHER_KEY}`;
@@ -7,7 +7,7 @@ const getLocationData = selectProps("name", "country");
 const getTemperatureData = selectProps("temp", "humidity", "feels_like");
 const getSunriseData = selectProps("sunrise", "sunset");
 
-export async function fetchData(location, units) {
+export async function callWeatherApi(location, units) {
   const { lat, lon } = location;
   const locationParams = `lat=${lat}&lon=${lon}`;
   const requestUrl = `${BASE_URL}${locationParams}&${APPID_PARAM}&units=${units}`;

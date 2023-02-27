@@ -2,10 +2,10 @@
 
 import "./stylesheets/application.scss";
 
-import * as Location from "./get_location";
-import * as Weather from "./get_weather";
-import { renderWeather } from "./render_weather";
-import { renderError } from "./render_error";
+import { callLocationApi } from "./services/call_location_api";
+import { callWeatherApi } from "./services/call_weather_api";
+import { renderWeather } from "./components/render_weather";
+import { renderError } from "./components/render_error";
 
 function getLatestQuery() {
   return localStorage.getItem("lastQuery");
@@ -21,9 +21,8 @@ const unitToggle = document.getElementById("units");
 const getUnitSystem = () => unitToggle.checked ? "metric" : "imperial";
 
 const queryAndRenderWeather = (searchTerm) => {
-  Location
-    .fetchData(searchTerm)
-    .then((location) => Weather.fetchData(location, getUnitSystem()))
+  callLocationApi(searchTerm)
+    .then((location) => callWeatherApi(location, getUnitSystem()))
     .then((weatherData) => {
       saveQuery(weatherData);
       renderWeather(weatherData);
